@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "VRC";
+    src: url("/VRC.ttf") format("truetype");
+}
+
+@media print {
+    * {
+        cursor: url("/default.cur"), auto;
+    }
+}
