@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webSTARS</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<script>
+    function selectDCBButton(id) {
+        let btns = Array.from(document.getElementsByClassName("dcb-btn"), (btn) => {
+            return btn;
+        });
+        btns.forEach((btn) => {
+            btn.classList.remove('selected-dcb-btn');
+            btn.classList.add('unselected-dcb-btn');
+        });
+        let selected = document.getElementById(id);
+        selected.classList.remove('unselected-dcb-btn');
+        selected.classList.add('selected-dcb-btn');
+    }
+</script>
+<div id="grid">
+    <div id="column-1">
+        <div class="dcp">
+            <div class="light-container">
+                <img src="svg/light.svg" alt="Display Control Panel button" class="light">
+                <img src="svg/light.svg" alt="Display Control Panel button" class="light">
+            </div>
+        </div>
+    </div>
+    <div id="column-2">
+        <div id="navigation">
+            <table>
+                <tr>
+                    <td class="dcb-btn" id="dcb-home"><a href="/pages/home.html" target="frame"
+                                                         onclick="selectDCBButton('dcb-home')"><span>HOME</span></a></td>
+                    <td class="dcb-btn" id="dcb-about"><a href="/pages/about.html" target="frame"
+                                                          onclick="selectDCBButton('dcb-about')"><span>ABOUT</span></a></td>
+                    <td class="dcb-btn" id="dcb-credits"><a href="/pages/credits.html" target="frame"
+                                                            onclick="selectDCBButton('dcb-credits')"><span>CREDITS</span></a></td>
+                </tr>
+            </table>
+        </div>
+        <script>selectDCBButton('dcb-home')</script>
+        <div id="content">
+            <iframe src="pages/home.html" name="frame" id="frame"></iframe>
+        </div>
+        <footer id="footer">
+            &copy; 2023 wiggleforlife<br>
+            Based on the real-world STARS system and Ross Carlson's <a href="https://vstars.rosscarlson.dev">vSTARS</a>
+        </footer>
+    </div>
+    <div id="column-3">
+        <div class="dcp">
+            <img src="svg/light.svg" alt="Display Control Panel button">
+        </div>
+    </div>
+</div>
+</body>
+</html>
